@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css?family=Cabin|Herr+Von+Muellerhoff|Source+Sans+Pro:400,900&display=swap');
+/*Global styles*/
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --main-font: 'Source Sans Pro', sans-serif;
+    --secondary-font: 'Herr Von Muellerhoff', cursive;
+    --body-font: 'Cabin', sans-serif;
+    --main-font-color-dark: #252525;
+    --secondary-font-color: #c59d5f;
+    --body-font-color: #515151;
+
+
+    --mobile-nav-background-color: #f0f3f7;
+
+    --grey: #7a7a7b;
+    --white: #ffffff;
+}
+
+html{
+    font-family: var(--body-font);
+    font-size: 10px;
+    color: var(--body-font-color);
+    scroll-behavior: smooth;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+section{
+    padding: 3.9rem 0;
+}
+
+img{
+    width: 100%;
+    max-width: 100%;
+}
+
+p{
+    font-size: 1.6rem;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1rem;
+}
+
+a:hover {
+    color: #ffa500;
+}
+
+.section-p1{
+    padding: 10px 10%;
+}
+
+.section-heading{
+    font-size: 60px;
+    font-weight: 600;
+    color: #0383ae;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.container{
+    width: 100%;
+    max-width: 122.5rem;
+    margin: 0 auto;
+    padding: 0 2.4rem;
+}
+
+/* scroll bar */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    scroll-behavior: smooth;
+}
+  
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #c59d5f;
+    scroll-behavior: smooth;
+}
+
+/* Header */
+header{
+    position: relative;
+    padding: 0 2rem;
+    background: #fff;
+}
+    /*Navbar section*/
+.navbar {
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.navbar .links {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar ul.links li a {
+    font-size: 2rem;
+}
+
+.navbar .toggle_btn {
+    color: #000;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.action_btn {
+    background-color: #ffa500;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+}
+
+.action_btn:hover {
+    scale: 1.05;
+    color: #000;
+}
+
+.action_btn:active {
+    scale: 0.95;
+}
+
+/*Dropdown Menu*/
+.dropdown_menu {
+    display: none;
+    position: absolute;
+    right: 2rem;
+    height: 0;
+    top: 60px;
+    width: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 999;
+}
+
+.dropdown_menu.open {
+    height: 240px;
+}
+
+.dropdown_menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dropdown_menu .action_btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+/*End of Header and Navbar Section */
+
+
+/* Responsive Design*/
+@media(max-width: 992px) {
+    .navbar .links,
+    .navbar .action_btn {
+        display: none;
+    }
+    .navbar .toggle_btn{
+        display: block;
+    }
+    .dropdown_menu {
+        display: block;
+    }
+    .dropdown_menu li a {
+        font-size: 20px;
+    }
+    .about_content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .about_image {
+        display: none;
+    }
+}
+
+@media(max-width: 576px) {
+    .dropdown_menu {
+        left: 2rem;
+        width: unset;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .hero {
+        height: 80vh;
+    }
+    .section-heading {
+        font-size: 50px;
+    }
+    .between {
+        min-height: 35vh;
+    }
+    .btn {
+        width: 190px;
+        text-align: center;
+    }
+    .services-list div{
+       padding: 15px;
+    }
+}
