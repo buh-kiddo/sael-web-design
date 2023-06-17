@@ -2,15 +2,16 @@
 function validate() {
   let name = document.querySelector('.name')
   let email = document.querySelector('.email')
+  let subject = documnet.querySelector('.subject')
   let msg = document.querySelector('.message')
   let sendBtn = document.querySelector('.send-btn')
   
   sendBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      if (name.value ==  "" || email.value ==  "" || msg.value ==  "") {
+      if (name.value ==  "" || email.value ==  "" || subject.value == "" || msg.value ==  "") {
           emptyerror();
       } else{
-          sendmail(name.value, email.value, msg.value);
+          sendmail(name.value, email.value, subject.value, msg.value);
           success();
       }
   })
@@ -19,8 +20,9 @@ function validate() {
   
   function sendmail(name,email,msg){
   emailjs.send("service_bqtsrp7","template_4wbyqov",{
-  from_name: name,
-  to_name: email,
+  sender_name: name,
+  sender_email: email,
+  subject: subject,
   message: msg,
   });
   }
