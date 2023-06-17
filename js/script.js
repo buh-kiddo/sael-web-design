@@ -2,7 +2,7 @@
 function validate() {
   let name = document.querySelector('.name')
   let email = document.querySelector('.email')
-  let subject = documnet.querySelector('.subject')
+  let subject = document.querySelector('.subject')
   let msg = document.querySelector('.message')
   let sendBtn = document.querySelector('.send-btn')
   
@@ -18,7 +18,7 @@ function validate() {
   }
   validate();
   
-  function sendmail(name,email,msg){
+  function sendmail(name,email,subject,msg){
   emailjs.send("service_bqtsrp7","template_4wbyqov",{
   sender_name: name,
   sender_email: email,
